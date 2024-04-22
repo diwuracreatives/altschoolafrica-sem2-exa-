@@ -1,0 +1,19 @@
+- hosts: slave
+  become: yes
+  tasks:
+    - name:  Bolu_lamp_stack (LAMP stack setup on Slave)
+      script: /path/to/setup.sh
+
+    - name: Bolu webpage (Check if the site is working)
+      uri:
+        url: http://192.168.33.11
+        return_content: yes
+      register: webpage
+      failed_when: "'Laravel' not in webpage.content"
+
+    - name: cron job to check server uptime
+      cron:
+        name: "Bolu server checker bot"
+        minute: "0"
+        hour: "0"
+        job: "uptime >> /var/log/uptime.log"
