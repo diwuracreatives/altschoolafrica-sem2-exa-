@@ -1,4 +1,5 @@
 ALTSCHOOL AFRICA SEMESTER TWO PROJECT(CLOUD ENEGINEERING TRACK)
+
 TASK:
 -Automate the provisioning of two Ubuntu-based servers, named “Master” and “Slave”, using Vagrant.
 On the Master node, create a bash script to automate the deployment of a LAMP (Linux, Apache, MySQL, PHP) stack.
